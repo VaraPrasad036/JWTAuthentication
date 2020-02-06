@@ -1,19 +1,15 @@
 package com.webfluxjwt;
 
-import java.util.stream.Stream;
-
-import javax.annotation.PostConstruct;
-
-import org.springframework.beans.BeanUtils;
+import com.webfluxjwt.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import com.webfluxjwt.documents.AuthrizationRequest;
-import com.webfluxjwt.documents.User;
-import com.webfluxjwt.repository.UserRepository;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
+@EnableZuulProxy
+@EnableEurekaClient
 public class WebfluxJwtApplication {
 	
 	@Autowired
